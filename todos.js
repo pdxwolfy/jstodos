@@ -1,4 +1,4 @@
-require("dotenv").config();
+const config = require("./lib/config");
 const express = require("express");
 const morgan = require("morgan");
 const flash = require("express-flash");
@@ -29,7 +29,7 @@ app.use(session({
   name: "launch-school-todos-session-id",
   resave: false,
   saveUninitialized: true,
-  secret: process.env.SECRET,
+  secret: config.env.SECRET,
   store: new LokiStore({}),
 }));
 
