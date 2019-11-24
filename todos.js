@@ -9,9 +9,10 @@ const PgPersistence = require("./lib/pg-persistence");
 const catchError = require("./lib/catch-error");
 
 const app = express();
-const host = config.HOST || "localhost";
-const port = config.PORT || 3000;
+const host = config.HOST;
+const port = config.PORT;
 const LokiStore = store(session);
+console.log(host, port);
 
 app.set("views", "./views");
 app.set("view engine", "pug");
